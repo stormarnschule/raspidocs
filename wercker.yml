@@ -1,0 +1,16 @@
+box: wercker/default
+build: 
+  steps:
+  
+    # build the hugo site
+    - arjen/hugo-build: 
+        theme: herring-cove
+        flags: --buildDrafts=true
+deploy:
+  steps:
+        
+    # Deploy to github pages
+    - lukevivier/gh-pages:
+        token: $GIT_TOKEN
+        # domain: hugo-wercker.ig.nore.me
+        basedir: public
