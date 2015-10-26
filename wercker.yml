@@ -4,7 +4,7 @@ build:
   
     # build the hugo site
     - arjen/hugo-build: 
-        theme: herring-cove
+        theme: default
         flags: --buildDrafts=true
 deploy:
   steps:
