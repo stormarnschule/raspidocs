@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
-	<link rel="icon" type="image/png" href="/raspidocs/img/favicon.png">
-	<link rel="stylesheet" href="/raspidocs/css/bootstrap.min.css">
+	<link rel="icon" type="image/png" href="{{ "img/favicon.png" | relURL }}">
+	<link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL }}">
 
 	<title>{{ .Site.Title }}</title>
 
@@ -22,7 +22,7 @@
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="{{ .Site.BaseURL }}">
-					<img alt="logo" style="display:inline-block;height:20px" src="/raspidocs/img/logo.png">&nbsp;&nbsp;{{ .Site.Title }} 
+					<img alt="logo" style="display:inline-block;height:20px" src="{{ "img/logo.png" | relURL }}">&nbsp;&nbsp;{{ .Site.Title }} 
 				</a>
 			</div>
 		</div>
