@@ -1,26 +1,22 @@
 {{ partial "header.html" . }}
 
 <main class="container">
-    <div class="row">
 
-        <div class="page-header">
-            <h1>{{ .Title }} <small>/ <a href="{{ .Section | relURL }}">{{ title .Section }}</a></small></h1>
-        </div>
-
-        <h1></h1>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong>Inhalt</strong></h3>
-            </div>
-            <div class="panel-body">
-                {{ .TableOfContents }}
-            </div>
-        </div>
-
-        {{ .Content }}
-
+    <div class="page-header">
+        <h1>{{ .Title }} <small>/ <a href="{{ .Section | relURL }}">{{ title .Section }}</a></small></h1>
     </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Inhalt</strong></h3>
+        </div>
+        <div class="panel-body">
+            {{ .TableOfContents }}
+        </div>
+    </div>
+
+    {{ .Content }}
+
 </main>
 
 {{ partial "footer.html" . }}
