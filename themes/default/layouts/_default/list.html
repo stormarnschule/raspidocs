@@ -1,4 +1,19 @@
 {{ partial "header.html" . }}
 
+<main class="container">
+    
+    <h1>{{ .Title }}</h1>
+    
+    <ul>
+            {{ range .Data.Pages }}
+            
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                
+            {{ else }}
+                <em><strong>No entries here!</strong></em>
+            {{ end }}
+    </ul>
+    
+</main>
 
 {{ partial "footer.html" . }}
