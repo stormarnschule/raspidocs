@@ -53,7 +53,7 @@ Wartet nun, bis der Schreibvorgang fertig abgeschlossen wurde.
 
 Steckt die SD-Karte, ein Netzwerkkabel und das Stromkabel in euren Pi und bootet.
 Hat Alles funktioniert, könnt ihr nach ein paar Sekunden euch über SSH mit eurem
-Raspberry Pi verbinden. Wie das geht, steht hier: __[SSH_Verbindung](...)__
+Raspberry Pi verbinden. Wie das geht, steht hier: __[SSH Verbindung]({{< ref "setup/ssh.md" >}})__
 
 ```
 Benutzer: pi
