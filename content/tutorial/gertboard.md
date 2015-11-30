@@ -15,7 +15,7 @@ Das Gertboard lässt sich in sechs verschiedene funktionelle Blöcke einteilen. 
 
 {{< figure src="/raspidocs/img/GertboardBereiche.png" title="Gertboard Bereiche" >}}
 
-Um diese Blöcke miteinander zu verbinden braucht ihr Kabel (weiblich auf weiblich). Sog. Jumper dienen zum Aktivieren einiger Bereiche. Mit ihnen kann z.B. festgelegt werden ob eine Ausgabe oder Eingabe an bestimmter Stelle erfolgen soll.
+Die Bereiche, die für uns von Bedeutung sind, werden hier in den Farben schwarz, rosa und rot gekennzeichnet. Um die Bereiche für Lichter und Buttons(rot) oder die Motorsteuerung(rosa) nutzen zu können, sprich diese mit dem Pi zu adressieren muss eine Verbindung zu den GPIO Pins(schwarz) geschlossen werden. Um diese Blöcke miteinander zu verbinden braucht ihr Kabel (weiblich auf weiblich). Des weiteren müssen innerhalb dieser Bereiche teilweise Verbindungen gestetzt werden, um entsprechende Funktionalität zu erhalten. Diese Verbindung können zum Beispiel bestimmten, ob es sich bei einem Element um eine Input oder Output handelt. Sog. Jumper dienen zum Aktivieren dieser Bereiche. Mit ihnen kann z.B. festgelegt werden ob eine Ausgabe oder Eingabe an bestimmter Stelle erfolgen soll.
 
 {{< figure src="/raspidocs/img/Kable.png" title="Verbindungselemente" >}}
 
@@ -23,4 +23,5 @@ Das blaue Schaubild ist ein Abbild eures Gertboards. Auf diesem sind die Beschri
 
 {{< figure src="/raspidocs/img/GertboardSkizze.png" title="Schaltskizze Gertboard" >}}
 
+Die Bereiche, die für uns von Bedeutung sind, werden hier in den Farben scharz, 
 
