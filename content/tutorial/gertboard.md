@@ -23,5 +23,6 @@ Das blaue Schaubild ist ein Abbild eures Gertboards. Auf diesem sind die Beschri
 
 {{< figure src="/raspidocs/img/GertboardSkizze.png" title="Schaltskizze Gertboard" >}}
 
-Die Bereiche, die für uns von Bedeutung sind, werden hier in den Farben scharz, 
+Die GP-Pins bilden die Verbindung zum Pi, mit der Reihe der B1-B12 Pins kann auf die LEDs auf dem Gertboard zugegriffen werden und MOTA und MOTB werden bei der Motorsteuerung genutzt. 
+Ein Buffer der immer gesetzt werden muss liegt bei der 3v3 Kennzeichnung auf dem Board. Hier müssen die oberen der drei Pins miteinander verbunden sein. Dies stellt eine Stromversorgung des Pi mit einer Spannung von 3,3V sicher, weshalb dieser Buffer immer gesetzt sein muss, um die Funktionalität des Gertboards zu gewährleisten.
 
