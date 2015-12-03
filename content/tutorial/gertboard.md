@@ -26,7 +26,18 @@ Das blaue Schaubild ist ein Abbild eures Gertboards. Auf diesem sind die Beschri
 Die GP-Pins(unten auf der Abbildung) bilden die Verbindung zum Pi, mit der Reihe der B1-B12 Pins kann auf die LEDs und die Buttons auf dem Gertboard zugegriffen werden und MOTA und MOTB werden bei der Motorsteuerung genutzt. 
 Ein Buffer der immer gesetzt werden muss liegt bei der 3v3 Kennzeichnung auf dem Board. Hier müssen die oberen der drei Pins miteinander verbunden sein. Dies stellt eine Stromversorgung des Pi mit einer Spannung von 3,3V sicher, weshalb dieser Buffer immer gesetzt sein muss, um die Funktionalität des Gertboards zu gewährleisten.
 Des weiteren interessieren uns die B-input und die B-output Pins im rot gekennzeichneten Bereich auf der Photografie des Boards. Hierbei sind die Pins stets aus der Sicht des Gertboards zu betrachten. Ein Output gesetzter Pin übermittelt so jegliche Information, die das Gertboard verlassen, während ein Input die Informationen betrachtet, die an das Board geschickt werden. Da wir unsere Programme auf dem Raspberry Pi erstellen werden, müssen wir hier umdenken. Ein output des Pi's ist ein Input beim Gertboard und umgekehrt. Um z.B. die Buttons zu nutzen, muss auf dem Gerboard eine Output-Verbindung gesetzen werden. Für die LEDs müssen die Puffer als Input gesteckt sein.
-Auch bei den GPIO Pins gibt es einiges zu beachten. Die Pin
 
-//link pinout.xyz
+Das Gertboard hat zudem möglicherweise eine andere Belegung der GPIO Pins, als euer Rasperry Pi. Dies liegt Änderungen bei den Belegungen der Pins in späteren Generationen des Pi's zugrunde. Bei dem Gerdboard liegt die ursprüngliche Belegung vor.
+Die folgende Tabelle zeigt die Unterschiede auf:
+
+|Gertboard|Raspberry Pi G1|Raspberry Pi G2|
+|---|---|---|
+|GPIO 0|GPIO 0|GPIO 2|
+|GPIO 1|GPIO 1|GPIO 3|
+|GPIO 21|GPIO 21|GPIO 27|
+
+
+
+
+
 
