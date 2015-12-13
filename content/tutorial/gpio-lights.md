@@ -3,7 +3,7 @@ date = "2015-10-26T11:50:32+01:00"
 title = "GPIO - Lichtorgel"
 +++
 
-# Vorrausetzungen
+# Voraussetzungen
 
 * [Gertboard Grundwissen]({{< ref "tutorial/gertboard.md" >}})
 
