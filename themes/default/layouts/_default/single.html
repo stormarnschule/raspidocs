@@ -15,7 +15,9 @@
         </div>
     </div>
 
-    {{ .Content }}
+    {{ .Content }} {{ if .Params.hasexamplecode }}
+        <a href="https://github.com/stormarnschule/example-code/blob/master/{{ substr .RelPermalink 11 -1 }}.cpp" class="btn btn-primary btn-lg">Beispiel-Code</a>
+    {{ end }}
 
 </main>
 
