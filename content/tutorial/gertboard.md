@@ -3,7 +3,7 @@ title = "Gertboard Grundwissen"
 +++
 
 # Voraussetzungen
-* [Raspberry Pi Grundwissen]({{< ref "setup/rpi-installation" >}})
+* [Raspberry Pi Grundwissen]({{< ref "setup/rpi-installation.md" >}})
 
 # Einführung
 
