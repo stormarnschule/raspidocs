@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi Project</title>
+    <link>http://stormarnschule.github.io/raspidocs/</link>
+    <description>Recent content on Raspberry Pi Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Mon, 23 Nov 2015 09:41:32 +0100</lastBuildDate>
+    <atom:link href="http://stormarnschule.github.io/raspidocs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SSH Verbindung</title>
+      <link>http://stormarnschule.github.io/raspidocs/setup/ssh/</link>
+      <pubDate>Mon, 23 Nov 2015 09:41:32 +0100</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/setup/ssh/</guid>
+      <description>
+
+&lt;h1 id=&#34;konzept:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Konzept&lt;/h1&gt;
+
+&lt;p&gt;Das Herstellen einer SSH-Verbindung zum Rasperry Pi ist sehr nützlich zum
+Ausführen von Befehlen. Man kann sich dann das anschließen von Monitor und
+Tastatur an den Pi sparen und vom eigenem Laptop oder Schulrecher aus den
+Pi steuern.&lt;/p&gt;
+
+&lt;p&gt;Je nach Betriebsystem ist das Verbinden zum Pi unterschiedlich. Dise Anleitung
+gilt für Linux, OSX und Windows.&lt;/p&gt;
+
+&lt;h1 id=&#34;verbinden-mit-pi:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Verbinden mit Pi&lt;/h1&gt;
+
+&lt;h2 id=&#34;linux-osx:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Linux, OSX&lt;/h2&gt;
+
+&lt;p&gt;OSX basiert auf Linux und da Linux einen SSH-Klienten mitbringt, gelten diese
+Schritte auch für OSX.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Öffne das Terminal&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Führe folgenden Befehl aus:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh pi@&amp;lt;ip&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;ip&amp;gt;&lt;/strong&gt; ist durch die IP-Addresse oder den Hostnamen des Raspberry Pis zu
+ersetzten.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Du bist nun auf dem Raspberry Pi und die Befehle, die du schreibt, werden
+direkt auf dem Pi ausgeführt&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Um zu Beenden, schließe entweder einfach das Terminal oder sende &lt;code&gt;exit&lt;/code&gt; an
+den Pi, um zum Terminal deines PCs zurückzukehren&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;windows:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Windows&lt;/h2&gt;
+
+&lt;p&gt;Anders als vorher hat Windows keinen eigenen SSH-Klienten, deshalb müssen wir
+uns einen herunterladen und installieren.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Lade &lt;a href=&#34;the.earth.li/~sgtatham/putty/latest/x86/putty.exe&#34;&gt;Putty&lt;/a&gt; herunter und
+ziehen es an einen geeigneten Ort, z.B. den Desktop&lt;/li&gt;
+&lt;li&gt;Starte Putty&lt;/li&gt;
+&lt;li&gt;Gib in das Feld &lt;code&gt;Host Name (or IP Address)&lt;/code&gt; folgendes ein: &lt;code&gt;pi@&amp;lt;ip&amp;gt;&lt;/code&gt;.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;ip&amp;gt;&lt;/strong&gt; ist durch die IP-Addresse oder den Hostnamen des Raspberry Pis zu
+ersetzten&lt;/li&gt;
+&lt;li&gt;Drücke Enter oder klicke auf &lt;strong&gt;Open&lt;/strong&gt; unten rechts&lt;/li&gt;
+&lt;li&gt;Du bist nun auf dem Raspberry Pi und die Befehle, die du schreibt, werden
+direkt auf dem Pi ausgeführt&lt;/li&gt;
+&lt;li&gt;Zum Beenden kannst du einfach das Putty-Fenster schließen&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rasberry Pi - Installation</title>
+      <link>http://stormarnschule.github.io/raspidocs/setup/rpi-installation/</link>
+      <pubDate>Mon, 26 Oct 2015 11:50:32 +0100</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/setup/rpi-installation/</guid>
+      <description>
+
+&lt;h1 id=&#34;materialien:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;Materialien&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SD-Karte, &lt;strong&gt;4 GB oder mehr&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Win32 Disk Imager&lt;/li&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;Computer mit SD-Kartenleser&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;betriebsystem:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;Betriebsystem&lt;/h1&gt;
+
+&lt;p&gt;Das Betriebsystem des Raspberry Pis ist eine angepasste Linux-Distribution, die von dem
+populärem &lt;a href=&#34;https://www.debian.org&#34;&gt;Debian&lt;/a&gt; abstammt, daher auch der Name &amp;ldquo;Raspbian&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-download:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;1. Download&lt;/h2&gt;
+
+&lt;p&gt;Als erstes muss das Datenträgerabbild von der Raspberry Pi Webseite heruntergeladen werden.
+Ihr findet es &lt;a href=&#34;https://www.raspberrypi.org/downloads/raspbian/&#34;&gt;auf der Downloadseite&lt;/a&gt;.
+Am Besten ladet ihr immer das Aktuellste herunter, wenn ihr einen Pi neu aufsetzt, dieses
+seht ihr auf der linken Seite:
+&lt;strong&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian_latest&#34;&gt;Direktlink&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Nach dem ihr die ZIP-Datei heruntergeladen habt, müsst ihr diese entpacken: Ihr erhaltet
+eine &lt;strong&gt;.IMG&lt;/strong&gt; Datei, das Datenträgerabbild.&lt;/p&gt;
+
+&lt;h2 id=&#34;2-sd-karte:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;2. SD-Karte&lt;/h2&gt;
+
+&lt;p&gt;Für das Kopieren des Images (Datenträgerabbildes) ist ein Programm wie
+&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-0.9.5-binary.zip/download&#34;&gt;Win32 Disk Imager&lt;/a&gt;
+benötigt, welches den Inhalt auf die SD-Karte schreibt.&lt;/p&gt;
+
+&lt;p&gt;Startet das Programm nach Download &amp;amp; Entpacken mit &lt;strong&gt;Administratorrechten&lt;/strong&gt;. Dies ist
+wichtig, da das Schreiben sonst unter Umständen nicht funktioniert!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Rechtsklick auf &amp;ldquo;Win32DiskImager.exe&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Klick auf &amp;ldquo;Als Administrator ausführen&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Wenn Win32 Disk Imager läuft:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Klick auf den kleinen, blauen Ordner rechts&lt;/li&gt;
+&lt;li&gt;Image (.IMG Datei) auswählen und bestätigen&lt;/li&gt;
+&lt;li&gt;Rechts unter &amp;ldquo;Device&amp;rdquo; die SD-Karte auswählen,
+den Laufwerkbuchstaben findet unter Windows-Explorer heraus&lt;/li&gt;
+&lt;li&gt;Klick auf &amp;ldquo;Write&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Klick auf &amp;ldquo;Yes&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Wartet nun, bis der Schreibvorgang fertig abgeschlossen wurde.&lt;/p&gt;
+
+&lt;h2 id=&#34;3-einrichtung:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;3. Einrichtung&lt;/h2&gt;
+
+&lt;p&gt;Steckt die SD-Karte, ein Netzwerkkabel und das Stromkabel in euren Pi und bootet.
+Hat Alles funktioniert, könnt ihr nach ein paar Sekunden euch über SSH mit eurem
+Raspberry Pi verbinden. Wie das geht, steht hier: &lt;strong&gt;&lt;a href=&#34;http://stormarnschule.github.io/raspidocs/setup/ssh/&#34;&gt;SSH Verbindung&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Benutzer: pi
+Passwort: raspberry
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Zu Erst werden einige grundlegende Einstellungen vorgenommen und Programme installiert.&lt;br /&gt;
+All dies wird als Root-Benutzer ausgeführt:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo -i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update der Software auf dem Pi (kann eine Weile dauern):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get -y update &amp;amp;&amp;amp; apt-get -y upgrade
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Konfigurieren mit &amp;ldquo;raspi-config&amp;rdquo;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;raspi-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ihr navigiert mit den Pfeiltasten und bestätigt mit der Entertaste. Mit Escape
+kommt ihr ein Menü zurück.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Wähle &amp;ldquo;1 Expand Filesystem&amp;rdquo;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Bestätige mit OK&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;3 Boot Options&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;B2 Console Autologin&amp;rdquo;&lt;br /&gt;
+&lt;em&gt;Der Pi startet dann in der Konsole und ihr seit bereits eingeloggt&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;8 Advanced Options&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;A6 SPI&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;Yes&amp;rdquo;&lt;br /&gt;
+&lt;em&gt;SPI ist aktiviert, das ist eine Schnittstelle die z.B. für das LCD Tutorial
+benötigt wird&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Bestätige mit OK&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;Yes&amp;rdquo;&lt;br /&gt;
+&lt;em&gt;SPI ist nun auch beim nächsten Neustart aktiv&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Bestätige mit OK&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;Finish&amp;rdquo; oder Drücke die Escape-Taste um zu Beenden&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Startet nun den Raspberry Pi neu!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;software:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;Software&lt;/h1&gt;
+
+&lt;h2 id=&#34;c-bibliotheken:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;C++ Bibliotheken&lt;/h2&gt;
+
+&lt;p&gt;Als Nächstes wollen wir die benötigten C++ Bibliotheken installiern, die zum
+Zugreifen auf die GPIO-Schnittstelle benötigt werden.&lt;/p&gt;
+
+&lt;h3 id=&#34;bcm2835:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;BCM2835&lt;/h3&gt;
+
+&lt;p&gt;Diese Bibliothek ist die Grundlage für alle weiteren GPIO Bibliotheken.
+Um sie zu installieren, führt ihr folgendes in der Konsole aus.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Ordner erstellen
+mkdir -p ~/libs
+cd ~/libs
+
+# Download und Entpacken
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.46.tar.gz
+tar -xzvf bcm2835-1.46.tar.gz
+cd bcm2835-1.46
+
+# Konfigurieren, Kompilieren, Installieren
+./configure
+make
+sudo make check
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;gpio:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;GPIO&lt;/h3&gt;
+
+&lt;p&gt;Mit dieser Bibliothek wird das verwenden von Pins erheblich erleichtert,
+deswegen sollte sie installiert werden:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~/libs
+
+# Download
+git clone https://github.com/stormarnschule/gpio.git
+cd gpio
+
+# Kompiliern und Installieren
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Entstehung Dokumentation</title>
+      <link>http://stormarnschule.github.io/raspidocs/meta/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/meta/documentation/</guid>
+      <description>
+
+&lt;p&gt;Auf dieser Seite wird erläutert, wie diese Dokumentation entsteht. Es wird
+dabei hauptsächlich auf technische Details eingegangen, die zeigen sollen,
+wie aus einer Markdown-Datei eine vollständige HTML-Webseite wird.&lt;/p&gt;
+
+&lt;h1 id=&#34;schreiben:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Schreiben&lt;/h1&gt;
+
+&lt;p&gt;Die gesamte Dokumentation besteht aus mehreren &lt;a href=&#34;http://markdown.de&#34;&gt;Markdown&lt;/a&gt;-Dateien,
+welche von einem Programm nach HTML übersetzt werden.&lt;/p&gt;
+
+&lt;p&gt;Markdown enthält einige Anweisungen, die für die Formatierung von Text verwendet
+werden. Ein Beispiel:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;# Titel
+## Untertitel
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+gubergren, no sea takimata sanctus est.
+
+Auflistung
+
+* Punkt 1
+* Punkt 2
+
+**fett** und *kursiv*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dieser Code wird in folgendes HTML kompiliert:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;h1&amp;gt;Titel&amp;lt;/h1&amp;gt;
+&amp;lt;h2&amp;gt;Untertitel&amp;lt;/h2&amp;gt;
+
+&amp;lt;p&amp;gt;
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est.
+&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;Auflistung&amp;lt;/p&amp;gt;
+
+&amp;lt;ul&amp;gt;
+    &amp;lt;li&amp;gt;Punkt 1&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;Punkt 2&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;strong&amp;gt;fett&amp;lt;/strong&amp;gt; und &amp;lt;em&amp;gt;kursiv&amp;lt;/em&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wann genau dies geschieht, seht ihr weiter unten im Punkt &lt;strong&gt;Übersetzen nach HTML&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;hosting:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Hosting&lt;/h1&gt;
+
+&lt;p&gt;Die Markdown-Datein sind auf &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; in einem
+&lt;a href=&#34;http://rogerdudler.github.io/git-guide/index.de.html&#34;&gt;Git-Repository&lt;/a&gt;
+gespeichert. GitHub ist eine Plattform, wo Entwickler ihren Code kostenlos
+für andere zu Verfügung stellen können.&lt;/p&gt;
+
+&lt;p&gt;Das Repository, wo man die Markdown-Dokumentation sehen kann,
+&lt;a href=&#34;https://github.com/stormarnschule/raspidocs&#34;&gt;findet man hier&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;übersetzen-nach-html:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Übersetzen nach HTML&lt;/h1&gt;
+
+&lt;p&gt;Da Webbrowser Webseiten in HTML lesen und dann darstellen, wird der Markdown-Code
+nach HTML kompiliert. Dies geschieht jedesmal, wenn ein neuer Commit hochgeladen wird,
+also der Code geändert wurde.&lt;/p&gt;
+
+&lt;p&gt;Die Tatsache, dass wir direkt nach HTML übersetzen, wenn es neuen Markdown-Code gibt,
+anstatt ihn bei jedem Aufruf unserer Seite zu kompilieren, hat den Vorteil, das
+dies viel schneller ist. Ohnehiin kann GitHub nur statische HTML-Dateien
+bereitstellen, es läuft kein dynamisches Serverskript, welches die Seiten beim Laden
+anpasst oder erstellt.&lt;/p&gt;
+
+&lt;p&gt;Diese Methode wird häufig für Blogs oder Dokumentationen angewendet, um geringe
+Ladezeiten zu ermöglichen. Diese Aufgabe übernimmt bei uns das Programm
+&lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt;. Es rendert den Markdown-Code unter Verwendung eines
+Themes zu HTML-Code. Das Theme bestimmt dabei Farben, Schriftgröße und Layout
+der fertigen Webseite. Es gibt also an, auf welche Art das Markdown, welches
+bloß zur Strukturierung des Textes dient, dargestellt wird.&lt;/p&gt;
+
+&lt;h1 id=&#34;automatisches-übersetzen:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Automatisches Übersetzen&lt;/h1&gt;
+
+&lt;p&gt;Damit wir nicht jedes Mal, wenn wir etwas verändert haben, Hugo lokal ausführen
+und dann den HTML-Code hochladen müssen, gibt es etwas, was sich
+&lt;strong&gt;Continuous Delivery&lt;/strong&gt; nennt.&lt;br /&gt;
+Wir benutzen hierfür &lt;a href=&#34;http://wercker.com/about&#34;&gt;Wercker&lt;/a&gt;. Das ist eine Web-App,
+die bei jedem Commit eines GitHub-Repository ein Shell-Skript ausführt.
+Dieses Skript startet dann Hugo mit dem Code aus dem Repository und dem Theme,
+welches sich ebenfalls in dem Repos befindet.&lt;/p&gt;
+
+&lt;p&gt;Wenn das Übersetzen erfolgreich war, lädt Wercker das Ergebnis in den Zweig
+&lt;a href=&#34;https://github.com/stormarnschule/raspidocs/tree/gh-pages&#34;&gt;gh-pages&lt;/a&gt; hoch.&lt;/p&gt;
+
+&lt;p&gt;Wenn mann nun auf die Webseite &lt;strong&gt;stormarnschule.github.io/raspidocs&lt;/strong&gt; geht,
+liefert GitHub die HTML-Dateien aus dem &lt;strong&gt;gh-pages&lt;/strong&gt; Zweig des &lt;strong&gt;raspidocs&lt;/strong&gt;
+Repositories.&lt;/p&gt;
+
+&lt;h1 id=&#34;fazit-des-workflows:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Fazit des Workflows&lt;/h1&gt;
+
+&lt;p&gt;Markdown bietet den großen Vorteil, dass es sich um reine Textdateien ohne
+komplizierte Syntax, wie HTML sie hat, handelt. Dies erhöht die Lesbarkeit
+und die Geschwindigkeit beim Schreiben.&lt;/p&gt;
+
+&lt;p&gt;Dadurch, dass ein Theme das Layout übernimmt, muss man beim Verfassen der
+Inhalte nicht auf das Layout acht geben. Außerdem kann man durch einfaches
+Austauschen des Themes die gesamte Webseite umgestalten, ohne in jeder
+Datei HTML-Code anpassen zu müssen.&lt;/p&gt;
+
+&lt;p&gt;Zuletzt ist das Hosting über GitHub eines der zuverlässigsten und schnellsten
+die es gibt. Dazu ist es kostenlos, sorgt also für ein langes Fortbestehen
+der Webseite.&lt;/p&gt;
+
+&lt;p&gt;So muss man sich nach einer kleinen Einrichtung, die auch noch schneller
+als bei klassischen Methoden von statten geht, nur noch um den Inhalt kümmern.
+Alles Weitere übernehmen ab dann GitHub und Wercker.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GPIO - Lichtorgel</title>
+      <link>http://stormarnschule.github.io/raspidocs/tutorial/gpio-lights/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/tutorial/gpio-lights/</guid>
+      <description>
+
+&lt;h1 id=&#34;voraussetzungen:5d02892c64c757e00d286775ccb08174&#34;&gt;Voraussetzungen&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stormarnschule.github.io/raspidocs/tutorial/gertboard/&#34;&gt;Gertboard Grundwissen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;setup:5d02892c64c757e00d286775ccb08174&#34;&gt;Setup&lt;/h1&gt;
+
+&lt;p&gt;Nun zum ersten Tutorial mit dem Gertboard. Deine Aufgabe ist es nun die
+eingebaute LED-Reihe in eine Lichtorgel zu verwandeln. Da bei der Lichtorgel
+alle LEDs angesteuert werden sollen und diese eine Ausgabe des Pi bzw. des
+Gertbords ist, müssen alle Buffer auf dem Gertboard ebenfalls als output
+gesetzt sein. Dies betrifft als output Buffer B1 – B12 (siehe Gertboardgrafik).&lt;/p&gt;
+
+&lt;p&gt;Habt ihr die Buffer richtig definiert, kann erstmal gar nichts passieren. Es
+gibt keine leitende Verbindung zwischen dem funktionellem Block der Buffer und
+dem Pi. Diese Verbindung muss nun geschaffen werden. Hierzu müssen die GP Pins
+mit den Buffer Pins verbunden werden.&lt;br /&gt;
+Um die LED wie gewünscht ansteuern zu können sind die GP25–GP17 mit den Buffern
+B1-B7 zu verbinden und GP11-GP7 mit B8-B12. GP15 und GP 14 werden ausgelassen,
+da diese eine andere Funktion abdecken, die zu diesem Zeitpunkt nicht benötigt
+wird. Nach dem verkabeln des Gertboards sollte dieses aussehen wie auf der
+Grafik und den Bildern unten auf der Seite.&lt;/p&gt;
+
+&lt;p&gt;&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/Gertboardgrafik.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Gertboard Schema&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/GertboardBild1.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Gertboard GPIO Header&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/GertboardBild2.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Gertboard Übersicht&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;das-programm:5d02892c64c757e00d286775ccb08174&#34;&gt;Das Programm&lt;/h1&gt;
+
+&lt;p&gt;Nun haben wir bereits die “Hardware”-Vorraussetzungen für unsere Lichtorgel
+geschaffen. Wichtig ist, dass ihr die GPIO-Steuerung in euer Programm
+inkludiert:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;#include &amp;lt;gpio.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Kommen wir nun zum Code, der die Lichtorgel
+antreibt. Wichtig ist, dass die Api (gpio.h), also die Schnittstelle
+eingebunden ist, die den Zugriff auf das Gertboard ermöglicht. Diese hält
+Methoden bereit, die ihr nun nutzen könnt um die LEDs auf dem Board an und aus
+zu schalten.&lt;/p&gt;
+
+&lt;p&gt;Euer Programm soll die LEDs auf dem Gerdboard der Reihe nach aufleuchten lassen.
+Nachdem eine Richtung komplett durchlaufen wurde, soll dies erneut in die
+andere Richtung geschehen. So entsteht eine nicht aufhörende Kette von
+aufleutenden Lampen.&lt;/p&gt;
+
+&lt;h1 id=&#34;tipps:5d02892c64c757e00d286775ccb08174&#34;&gt;Tipps&lt;/h1&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-1&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-1&#34;&gt;
+      Tipp 1
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-1&#34;&gt;
+    
+Zuerst muss eine Liste von gpio Pins erstellt werden. Diese sollte alle Pins enthalten die in Verbindung mit den LEDs stehen und diese als Output Pins deklarieren.
+
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-2&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-2&#34;&gt;
+      Tipp 2
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-2&#34;&gt;
+    
+Um das aufleuchten der Lampen zu einer Lichtorgel zu verbinden benötigt ihr 3 Schleifen.
+Davon dient zwei nur zum Aufleuchten einer Reihe in jeweils verschiedene Richtungen. Die dritte dient dazu, dass dieser Vorgang wieder von vorne beginnt.
+
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-3&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-3&#34;&gt;
+      Tipp 3
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-3&#34;&gt;
+    
+Funktionen die genutzt werden sollten sind: begin(), end(), state(), delay().
+
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-4&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-4&#34;&gt;
+      Tipp 4
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-4&#34;&gt;
+    
+Mit der Funktion state() kann sowohl ein Wert abgefragt, mit der set_state(bool) übergegen werden.
+
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GPIO - Taster</title>
+      <link>http://stormarnschule.github.io/raspidocs/tutorial/gpio-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/tutorial/gpio-button/</guid>
+      <description>
+
+&lt;h1 id=&#34;vorrausetzungen:ae1bf6e82ed181f414b60af227d967aa&#34;&gt;Vorrausetzungen&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stormarnschule.github.io/raspidocs/tutorial/gertboard/&#34;&gt;Gertboard Grundwissen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;setup:ae1bf6e82ed181f414b60af227d967aa&#34;&gt;Setup&lt;/h1&gt;
+
+&lt;p&gt;Da in diesem Turorial zum ersten Mal die Taster auf dem Gertboard eingebunden
+werden sollen und diese eine Eingabe darstellen werden, muss die Verkabelung
+der Pins erneut verändert werden.&lt;br /&gt;
+Auf die Output Pins B1-B3 müssen Jumper gesetzt werden. Dies ermöglicht eine
+Ausgabe des Gertboardboard ausgelöst durch die Taster. Außerdem müssen die GPIO
+Pins 25 mit B1, 24 mit B2 und 23 mit B1 verbunden werden.&lt;/p&gt;
+
+&lt;h1 id=&#34;das-programm:ae1bf6e82ed181f414b60af227d967aa&#34;&gt;Das Programm&lt;/h1&gt;
+
+&lt;p&gt;Euer Programm soll nun den Status der Buttons anzeigen. Hierbei sollt ihr alle
+drei Buttons einbinden und eine Ausgabe formulieren, über die dem Nutzer
+mitgeteilt wird, ob ein Button gedrückt ist oder nicht.&lt;/p&gt;
+
+&lt;h1 id=&#34;tipps:ae1bf6e82ed181f414b60af227d967aa&#34;&gt;Tipps&lt;/h1&gt;
+
+&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-1&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-1&#34;&gt;
+      Tipp 1
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-1&#34;&gt;
+    
+Es muss eine Liste der Pins angelegt werden, über die die Buttons angesteuert werden, bzw. über die deren Signal geleitet wird. Diese soll gleichzeitig die Pins als button_pin deklarieren. Ihr erstellt also eine Liste von den button_pins. Mit dieser Liste könnt ihr dann im folgenden arbeiten.
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-2&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-2&#34;&gt;
+      Tipp 2
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-2&#34;&gt;
+    
+Die Liste muss durchgegangen werden und von jedem Pin soll der Status ermittelt werden. Diesen könnt ihr in einer Variablen Speichern und ausgeben lassen.
+
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-3&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-3&#34;&gt;
+      Tipp 3
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-3&#34;&gt;
+    
+Um immer den aktuellen Status eines Buttons ermitteln, müssen sich eure Statusabfragen und Ausgaben in einer while-Schleife befinden.
+
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-4&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-4&#34;&gt;
+      Tipp 4
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-4&#34;&gt;
+    
+Der Übersichtlichkeit halber solltet ihr die ausgegebene Zeile zu Beginn der Schleife wieder löschen.
+
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gertboard Grundwissen</title>
+      <link>http://stormarnschule.github.io/raspidocs/tutorial/gertboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/tutorial/gertboard/</guid>
+      <description>
+
+&lt;h1 id=&#34;voraussetzungen:f59173037190c8737308268369acf5f2&#34;&gt;Voraussetzungen&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stormarnschule.github.io/raspidocs/setup/rpi-installation/&#34;&gt;Raspberry Pi Grundwissen&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;einführung:f59173037190c8737308268369acf5f2&#34;&gt;Einführung&lt;/h1&gt;
+
+&lt;p&gt;Das Gertboard erweitert euren Raspberry Pi und ermöglicht euch schnelle und einfachere Konfigurationen von Ein- und Ausgabegeräten, mit denen ihr im weiteren arbeitet. Das Gertboard muss auf die GPIO Pins des Raspberry Pi gesteckt werden. Herbei sollen beide Pinreihen abgedeckt sein. Rasperry Pi&amp;rsquo;s neuerer Generationen besitzen mehr Pins als das Gertboard Kontaktstellen hat. In diesem Fall müssen nur die ersten 26 Pins abgedeckt sein. Folgendes Bild zeigt einen korrekten Anschluss des Boards:&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/GertboardSetup.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Gertboard Anschluss&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Das Gertboard lässt sich in sechs verschiedene funktionelle Blöcke einteilen. Diese Blöcke haben keine Verbindungen untereinander. Nur über die Pins auf dem Board können Verbindungen zwischen einzelnen Blöcken hergestellt werden. Für uns sind erstmal nur drei der sechs Blöcke interessant. Der Block mit den gepufferten I/O, die GPIO-Pins sowie der Motor-Controller:&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/GertboardBereiche.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Gertboard Bereiche&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Die Bereiche, die für uns von Bedeutung sind, werden hier in den Farben schwarz, rosa und rot gekennzeichnet. Um die Bereiche für Lichter und Buttons(rot) oder die Motorsteuerung(rosa) nutzen zu können, sprich diese mit dem Pi zu adressieren muss eine Verbindung zu den GPIO Pins(schwarz) geschlossen werden. Um diese Blöcke miteinander zu verbinden braucht ihr Kabel (weiblich auf weiblich). Des weiteren müssen innerhalb dieser Bereiche teilweise Verbindungen gestetzt werden, um entsprechende Funktionalität zu erhalten. Diese Verbindung können zum Beispiel bestimmten, ob es sich bei einem Element um eine Input oder Output handelt. Sog. Jumper dienen zum Aktivieren dieser Bereiche. Mit ihnen kann z.B. festgelegt werden ob eine Ausgabe oder Eingabe an bestimmter Stelle erfolgen soll.&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/Kable.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Verbindungselemente&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Das blaue Schaubild ist ein Abbild eures Gertboards. Auf diesem sind die Beschriftungen und Zusammenhänge besser nachzuvollziehen, als auf einer Farbfotografie:&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/GertboardSkizze.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Schaltskizze Gertboard&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;p&gt;Die GP-Pins(unten auf der Abbildung) bilden die Verbindung zum Pi, mit der Reihe der B1-B12 Pins kann auf die LEDs und die Buttons auf dem Gertboard zugegriffen werden und MOTA und MOTB werden bei der Motorsteuerung genutzt.
+Ein Buffer der immer gesetzt werden muss liegt bei der 3v3 Kennzeichnung auf dem Board. Hier müssen die oberen der drei Pins miteinander verbunden sein. Dies stellt eine Stromversorgung des Pi mit einer Spannung von 3,3V sicher, weshalb dieser Buffer immer gesetzt sein muss, um die Funktionalität des Gertboards zu gewährleisten.
+Des weiteren interessieren uns die B-input und die B-output Pins im rot gekennzeichneten Bereich auf der Photografie des Boards. Hierbei sind die Pins stets aus der Sicht des Gertboards zu betrachten. Ein Output gesetzter Pin übermittelt so jegliche Information, die das Gertboard verlassen, während ein Input die Informationen betrachtet, die an das Board geschickt werden. Da wir unsere Programme auf dem Raspberry Pi erstellen werden, müssen wir hier umdenken. Ein output des Pi&amp;rsquo;s ist ein Input beim Gertboard und umgekehrt. Um z.B. die Buttons zu nutzen, muss auf dem Gerboard eine Output-Verbindung gesetzen werden. Für die LEDs müssen die Puffer als Input gesteckt sein.&lt;/p&gt;
+
+&lt;p&gt;Das Gertboard hat zudem möglicherweise eine andere Belegung der GPIO Pins, als euer Rasperry Pi. Dies liegt Änderungen bei den Belegungen der Pins in späteren Generationen des Pi&amp;rsquo;s zugrunde. Bei dem Gerdboard liegt die ursprüngliche Belegung vor.
+Die folgende Tabelle zeigt die Unterschiede auf:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Gertboard&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Raspberry Pi G1&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Raspberry Pi G2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GPIO 0&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;GPIO 0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;GPIO 2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;GPIO 1&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;GPIO 1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;GPIO 3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;GPIO 21&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;GPIO 21&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;GPIO 27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simple LED</title>
+      <link>http://stormarnschule.github.io/raspidocs/tutorial/gpio-led/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/tutorial/gpio-led/</guid>
+      <description>
+
+&lt;h1 id=&#34;voraussetzungen:ee33a8f99010af79e56a62a70cf3bb73&#34;&gt;Voraussetzungen&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stormarnschule.github.io/raspidocs/setup/rpi-installation/&#34;&gt;Pi Setup/Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stormarnschule.github.io/raspidocs/setup/ssh/&#34;&gt;SSH Verbindung&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;setup:ee33a8f99010af79e56a62a70cf3bb73&#34;&gt;Setup&lt;/h1&gt;
+
+&lt;p&gt;In diesem Tutorial geht es um eine LED, die mittels des Raspberry Pi&amp;rsquo;s angesteuert und zum blinken gebracht werden soll. Um dies physikalisch zu ermöglichen, muss zunächst eine Verbindung des Pi&amp;rsquo;s mit der LED geschlossen werden. Hierfür benutzen wird ein Schaltboard, auf das die Led gesteckt wird. Der Pi wird nun so mit zwei Kabeln über zwei GPIO-Pins mit dem Schaltboard verbunden, dass ein Stromkreis gebildet wird. Zudem benötigen wir einen in Reihe geschalteten Widerstand, um die Stromstärke zu senken.&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/schaltboard_simple_led.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;LED Setup Schaltboard&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;h1 id=&#34;setup-check:ee33a8f99010af79e56a62a70cf3bb73&#34;&gt;Setup-Check&lt;/h1&gt;
+
+&lt;p&gt;Wenn ihr euer Schaltboard mit den aufgezählten Elementen versehen habt, könnt ihr euer Setup testen, indem ihr die Kabel die nun vom Schaltboard ausgehen mit dem Dauerstrompin(3,3v, Pin 1) des Pi&amp;rsquo;s und der Erdung(Pin 25) verbindet (siehe Grafik). Achtet darauf, dass eine LED-Diode nur bei einer Stromrichtung den Stromkreislauf schließt. Kommt es daraufhin zu einem Dauerleuchten euer LED, wisst ihr, dass alle Komponenten intakt sind.&lt;/p&gt;
+
+&lt;figure&gt;
+    
+        &lt;img  class=&#34;container&#34; src=&#34;http://stormarnschule.github.io/raspidocs/raspidocs/img/pi_simple_led.png&#34;  /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Pin Setup&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+&lt;h1 id=&#34;das-programm:ee33a8f99010af79e56a62a70cf3bb73&#34;&gt;Das Programm&lt;/h1&gt;
+
+&lt;p&gt;Nun soll die Led vom Raspberry aus gesteuert werden und nicht durchleuchten, sondern Phasenweise für jeweils 0,5s an und aus sein. Um dies überhaupt zu ermöglichen, muss noch eine kleine Änderung an eurer Hardware vorgenommen werden. Die Verbindung am Dauerstrompin muss aufgelöst werden und das Kabel muss mit an einen der GPIO-Pins verbunden werden. Wir nutzen für dieses Programm den GPIO Pin 15 (siehe Grafik). Diesen Pin könnt ihr mit dem Raspberry Pi ansteuern und an- bzw. ausschalten, also eine Spannung anlegen oder nicht anlegen.
+Schreibt nun ein Programm, welches die LED 10 mal für 0,5s leuchten lässt.&lt;/p&gt;
+
+&lt;h1 id=&#34;tipps:ee33a8f99010af79e56a62a70cf3bb73&#34;&gt;Tipps&lt;/h1&gt;
+
+&lt;p&gt;&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-1&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-1&#34;&gt;
+      Tipp 1
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-1&#34;&gt;
+     Die Gpio-Klasse erleichtert das Arbeiten mit den Pins erheblich. Erfindet also das Rad nicht neu und importiert diese zu Anfang (#include &#34;gpio.h). Es ist jetzt möglich Input- und Output-Pins allein mit der Übergabe der Pinnummer zu definieren. Ihr braucht außerdem eine Hauptmethode &#34;int main()&#34;. Diese wird bei Programmstart ausgeführt. In ihr könnt ihr die Syntax für euer Programm implementieren.  
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-2&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-2&#34;&gt;
+      Tipp 2
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-2&#34;&gt;
+     Zuerst muss der Pin 15 als Output-Pin definiert werden. Erzeugt also ein Pin-Objekt über die &#34;output_pin&#34; Methode in der Gpio-Klasse.   
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-3&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-3&#34;&gt;
+      Tipp 3
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-3&#34;&gt;
+     Das zehnfache aufleuchten könnt ihr mir einer for-Schleife umsetzen. 
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-4&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-4&#34;&gt;
+      Tipp 4
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-4&#34;&gt;
+     Den Pin-Status kann mit der Methode &#34;set_state&#34; verändert werden.  
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-default&#34;&gt;
+  &lt;div class=&#34;panel-heading&#34;&gt;
+    &lt;a class=&#34;btn btn-primary&#34; role=&#34;button&#34; data-toggle=&#34;collapse&#34; href=&#34;#tipp-5&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;tipp-5&#34;&gt;
+      Tipp 5
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;panel-body collapse&#34; id=&#34;tipp-5&#34;&gt;
+     Mit der Methode &#34;delay()&#34; wird das Programm für die Zeitdauer der übergebenden Zahl in ms pausiert. 
+  &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="icon" type="image/png" href="/raspidocs/img/favicon.png">
+	<link rel="stylesheet" href="/raspidocs/css/bootstrap.min.css">
+
+	<title>Raspberry Pi Project</title>
+
+</head>
+
+<body>
+
+	
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://stormarnschule.github.io/raspidocs">
+					<img alt="logo" style="display:inline-block;height:20px" src="/raspidocs/img/logo.png">&nbsp;&nbsp;Raspberry Pi Project 
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	
+
+<main class="container">
+
+    <div class="page-header">
+        <h1>Gertboard Grundwissen <small>/ <a href="/raspidocs/tutorial">Tutorial</a></small></h1>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Inhalt</strong></h3>
+        </div>
+        <div class="panel-body">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#voraussetzungen:f59173037190c8737308268369acf5f2">Voraussetzungen</a></li>
+<li><a href="#einführung:f59173037190c8737308268369acf5f2">Einführung</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+
+    
+
+<h1 id="voraussetzungen:f59173037190c8737308268369acf5f2">Voraussetzungen</h1>
+
+<ul>
+<li><a href="http://stormarnschule.github.io/raspidocs/setup/rpi-installation/">Raspberry Pi Grundwissen</a></li>
+</ul>
+
+<h1 id="einführung:f59173037190c8737308268369acf5f2">Einführung</h1>
+
+<p>Das Gertboard erweitert euren Raspberry Pi und ermöglicht euch schnelle und einfachere Konfigurationen von Ein- und Ausgabegeräten, mit denen ihr im weiteren arbeitet. Das Gertboard muss auf die GPIO Pins des Raspberry Pi gesteckt werden. Herbei sollen beide Pinreihen abgedeckt sein. Rasperry Pi&rsquo;s neuerer Generationen besitzen mehr Pins als das Gertboard Kontaktstellen hat. In diesem Fall müssen nur die ersten 26 Pins abgedeckt sein. Folgendes Bild zeigt einen korrekten Anschluss des Boards:</p>
+
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/GertboardSetup.png"  />
+    
+    
+    <figcaption>
+        <h4>Gertboard Anschluss</h4>
+        
+    </figcaption>
+    
+</figure>
+
+<p>Das Gertboard lässt sich in sechs verschiedene funktionelle Blöcke einteilen. Diese Blöcke haben keine Verbindungen untereinander. Nur über die Pins auf dem Board können Verbindungen zwischen einzelnen Blöcken hergestellt werden. Für uns sind erstmal nur drei der sechs Blöcke interessant. Der Block mit den gepufferten I/O, die GPIO-Pins sowie der Motor-Controller:</p>
+
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/GertboardBereiche.png"  />
+    
+    
+    <figcaption>
+        <h4>Gertboard Bereiche</h4>
+        
+    </figcaption>
+    
+</figure>
+
+<p>Die Bereiche, die für uns von Bedeutung sind, werden hier in den Farben schwarz, rosa und rot gekennzeichnet. Um die Bereiche für Lichter und Buttons(rot) oder die Motorsteuerung(rosa) nutzen zu können, sprich diese mit dem Pi zu adressieren muss eine Verbindung zu den GPIO Pins(schwarz) geschlossen werden. Um diese Blöcke miteinander zu verbinden braucht ihr Kabel (weiblich auf weiblich). Des weiteren müssen innerhalb dieser Bereiche teilweise Verbindungen gestetzt werden, um entsprechende Funktionalität zu erhalten. Diese Verbindung können zum Beispiel bestimmten, ob es sich bei einem Element um eine Input oder Output handelt. Sog. Jumper dienen zum Aktivieren dieser Bereiche. Mit ihnen kann z.B. festgelegt werden ob eine Ausgabe oder Eingabe an bestimmter Stelle erfolgen soll.</p>
+
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/Kable.png"  />
+    
+    
+    <figcaption>
+        <h4>Verbindungselemente</h4>
+        
+    </figcaption>
+    
+</figure>
+
+<p>Das blaue Schaubild ist ein Abbild eures Gertboards. Auf diesem sind die Beschriftungen und Zusammenhänge besser nachzuvollziehen, als auf einer Farbfotografie:</p>
+
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/GertboardSkizze.png"  />
+    
+    
+    <figcaption>
+        <h4>Schaltskizze Gertboard</h4>
+        
+    </figcaption>
+    
+</figure>
+
+<p>Die GP-Pins(unten auf der Abbildung) bilden die Verbindung zum Pi, mit der Reihe der B1-B12 Pins kann auf die LEDs und die Buttons auf dem Gertboard zugegriffen werden und MOTA und MOTB werden bei der Motorsteuerung genutzt.
+Ein Buffer der immer gesetzt werden muss liegt bei der 3v3 Kennzeichnung auf dem Board. Hier müssen die oberen der drei Pins miteinander verbunden sein. Dies stellt eine Stromversorgung des Pi mit einer Spannung von 3,3V sicher, weshalb dieser Buffer immer gesetzt sein muss, um die Funktionalität des Gertboards zu gewährleisten.
+Des weiteren interessieren uns die B-input und die B-output Pins im rot gekennzeichneten Bereich auf der Photografie des Boards. Hierbei sind die Pins stets aus der Sicht des Gertboards zu betrachten. Ein Output gesetzter Pin übermittelt so jegliche Information, die das Gertboard verlassen, während ein Input die Informationen betrachtet, die an das Board geschickt werden. Da wir unsere Programme auf dem Raspberry Pi erstellen werden, müssen wir hier umdenken. Ein output des Pi&rsquo;s ist ein Input beim Gertboard und umgekehrt. Um z.B. die Buttons zu nutzen, muss auf dem Gerboard eine Output-Verbindung gesetzen werden. Für die LEDs müssen die Puffer als Input gesteckt sein.</p>
+
+<p>Das Gertboard hat zudem möglicherweise eine andere Belegung der GPIO Pins, als euer Rasperry Pi. Dies liegt Änderungen bei den Belegungen der Pins in späteren Generationen des Pi&rsquo;s zugrunde. Bei dem Gerdboard liegt die ursprüngliche Belegung vor.
+Die folgende Tabelle zeigt die Unterschiede auf:</p>
+
+<hr />
+
+<table>
+<thead>
+<tr>
+<th>Gertboard</th>
+<th align="center">Raspberry Pi G1</th>
+<th align="right">Raspberry Pi G2</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>GPIO 0</td>
+<td align="center">GPIO 0</td>
+<td align="right">GPIO 2</td>
+</tr>
+
+<tr>
+<td>GPIO 1</td>
+<td align="center">GPIO 1</td>
+<td align="right">GPIO 3</td>
+</tr>
+
+<tr>
+<td>GPIO 21</td>
+<td align="center">GPIO 21</td>
+<td align="right">GPIO 27</td>
+</tr>
+</tbody>
+</table>
+ 
+
+</main>
+
+	<script src="/raspidocs/js/jquery-2.1.4.min.js"></script>
+	<script src="/raspidocs/js/bootstrap.min.js"></script>
+
+</body>
+</html>

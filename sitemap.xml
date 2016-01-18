@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/</loc>
+    <lastmod>2015-11-23T09:41:32+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/setup/ssh/</loc>
+    <lastmod>2015-11-23T09:41:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/setup/rpi-installation/</loc>
+    <lastmod>2015-10-26T11:50:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/meta/documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/tutorial/gpio-lights/</loc>
+  </url>
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/tutorial/gpio-button/</loc>
+  </url>
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/tutorial/gertboard/</loc>
+  </url>
+  
+  <url>
+    <loc>http://stormarnschule.github.io/raspidocs/tutorial/gpio-led/</loc>
+  </url>
+  
+</urlset>

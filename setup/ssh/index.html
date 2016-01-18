@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="icon" type="image/png" href="/raspidocs/img/favicon.png">
+	<link rel="stylesheet" href="/raspidocs/css/bootstrap.min.css">
+
+	<title>Raspberry Pi Project</title>
+
+</head>
+
+<body>
+
+	
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://stormarnschule.github.io/raspidocs">
+					<img alt="logo" style="display:inline-block;height:20px" src="/raspidocs/img/logo.png">&nbsp;&nbsp;Raspberry Pi Project 
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	
+
+<main class="container">
+
+    <div class="page-header">
+        <h1>SSH Verbindung <small>/ <a href="/raspidocs/setup">Setup</a></small></h1>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Inhalt</strong></h3>
+        </div>
+        <div class="panel-body">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#konzept:b5e789e001cfcd9a18b36ef13da96386">Konzept</a></li>
+<li><a href="#verbinden-mit-pi:b5e789e001cfcd9a18b36ef13da96386">Verbinden mit Pi</a>
+<ul>
+<li><a href="#linux-osx:b5e789e001cfcd9a18b36ef13da96386">Linux, OSX</a></li>
+<li><a href="#windows:b5e789e001cfcd9a18b36ef13da96386">Windows</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+
+    
+
+<h1 id="konzept:b5e789e001cfcd9a18b36ef13da96386">Konzept</h1>
+
+<p>Das Herstellen einer SSH-Verbindung zum Rasperry Pi ist sehr nützlich zum
+Ausführen von Befehlen. Man kann sich dann das anschließen von Monitor und
+Tastatur an den Pi sparen und vom eigenem Laptop oder Schulrecher aus den
+Pi steuern.</p>
+
+<p>Je nach Betriebsystem ist das Verbinden zum Pi unterschiedlich. Dise Anleitung
+gilt für Linux, OSX und Windows.</p>
+
+<h1 id="verbinden-mit-pi:b5e789e001cfcd9a18b36ef13da96386">Verbinden mit Pi</h1>
+
+<h2 id="linux-osx:b5e789e001cfcd9a18b36ef13da96386">Linux, OSX</h2>
+
+<p>OSX basiert auf Linux und da Linux einen SSH-Klienten mitbringt, gelten diese
+Schritte auch für OSX.</p>
+
+<ol>
+<li>Öffne das Terminal</li>
+
+<li><p>Führe folgenden Befehl aus:</p>
+
+<pre><code>ssh pi@&lt;ip&gt;
+</code></pre>
+
+<p><strong>&lt;ip&gt;</strong> ist durch die IP-Addresse oder den Hostnamen des Raspberry Pis zu
+ersetzten.</p></li>
+
+<li><p>Du bist nun auf dem Raspberry Pi und die Befehle, die du schreibt, werden
+direkt auf dem Pi ausgeführt</p></li>
+
+<li><p>Um zu Beenden, schließe entweder einfach das Terminal oder sende <code>exit</code> an
+den Pi, um zum Terminal deines PCs zurückzukehren</p></li>
+</ol>
+
+<h2 id="windows:b5e789e001cfcd9a18b36ef13da96386">Windows</h2>
+
+<p>Anders als vorher hat Windows keinen eigenen SSH-Klienten, deshalb müssen wir
+uns einen herunterladen und installieren.</p>
+
+<ol>
+<li>Lade <a href="the.earth.li/~sgtatham/putty/latest/x86/putty.exe">Putty</a> herunter und
+ziehen es an einen geeigneten Ort, z.B. den Desktop</li>
+<li>Starte Putty</li>
+<li>Gib in das Feld <code>Host Name (or IP Address)</code> folgendes ein: <code>pi@&lt;ip&gt;</code>.<br />
+<strong>&lt;ip&gt;</strong> ist durch die IP-Addresse oder den Hostnamen des Raspberry Pis zu
+ersetzten</li>
+<li>Drücke Enter oder klicke auf <strong>Open</strong> unten rechts</li>
+<li>Du bist nun auf dem Raspberry Pi und die Befehle, die du schreibt, werden
+direkt auf dem Pi ausgeführt</li>
+<li>Zum Beenden kannst du einfach das Putty-Fenster schließen</li>
+</ol>
+ 
+
+</main>
+
+	<script src="/raspidocs/js/jquery-2.1.4.min.js"></script>
+	<script src="/raspidocs/js/bootstrap.min.js"></script>
+
+</body>
+</html>

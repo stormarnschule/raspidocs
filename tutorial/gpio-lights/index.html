@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="icon" type="image/png" href="/raspidocs/img/favicon.png">
+	<link rel="stylesheet" href="/raspidocs/css/bootstrap.min.css">
+
+	<title>Raspberry Pi Project</title>
+
+</head>
+
+<body>
+
+	
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://stormarnschule.github.io/raspidocs">
+					<img alt="logo" style="display:inline-block;height:20px" src="/raspidocs/img/logo.png">&nbsp;&nbsp;Raspberry Pi Project 
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	
+
+<main class="container">
+
+    <div class="page-header">
+        <h1>GPIO - Lichtorgel <small>/ <a href="/raspidocs/tutorial">Tutorial</a></small></h1>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Inhalt</strong></h3>
+        </div>
+        <div class="panel-body">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#voraussetzungen:5d02892c64c757e00d286775ccb08174">Voraussetzungen</a></li>
+<li><a href="#setup:5d02892c64c757e00d286775ccb08174">Setup</a></li>
+<li><a href="#das-programm:5d02892c64c757e00d286775ccb08174">Das Programm</a></li>
+<li><a href="#tipps:5d02892c64c757e00d286775ccb08174">Tipps</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+
+    
+
+<h1 id="voraussetzungen:5d02892c64c757e00d286775ccb08174">Voraussetzungen</h1>
+
+<ul>
+<li><a href="http://stormarnschule.github.io/raspidocs/tutorial/gertboard/">Gertboard Grundwissen</a></li>
+</ul>
+
+<h1 id="setup:5d02892c64c757e00d286775ccb08174">Setup</h1>
+
+<p>Nun zum ersten Tutorial mit dem Gertboard. Deine Aufgabe ist es nun die
+eingebaute LED-Reihe in eine Lichtorgel zu verwandeln. Da bei der Lichtorgel
+alle LEDs angesteuert werden sollen und diese eine Ausgabe des Pi bzw. des
+Gertbords ist, müssen alle Buffer auf dem Gertboard ebenfalls als output
+gesetzt sein. Dies betrifft als output Buffer B1 – B12 (siehe Gertboardgrafik).</p>
+
+<p>Habt ihr die Buffer richtig definiert, kann erstmal gar nichts passieren. Es
+gibt keine leitende Verbindung zwischen dem funktionellem Block der Buffer und
+dem Pi. Diese Verbindung muss nun geschaffen werden. Hierzu müssen die GP Pins
+mit den Buffer Pins verbunden werden.<br />
+Um die LED wie gewünscht ansteuern zu können sind die GP25–GP17 mit den Buffern
+B1-B7 zu verbinden und GP11-GP7 mit B8-B12. GP15 und GP 14 werden ausgelassen,
+da diese eine andere Funktion abdecken, die zu diesem Zeitpunkt nicht benötigt
+wird. Nach dem verkabeln des Gertboards sollte dieses aussehen wie auf der
+Grafik und den Bildern unten auf der Seite.</p>
+
+<p><figure>
+    
+        <img  class="container" src="/raspidocs/img/Gertboardgrafik.png"  />
+    
+    
+    <figcaption>
+        <h4>Gertboard Schema</h4>
+        
+    </figcaption>
+    
+</figure>
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/GertboardBild1.png"  />
+    
+    
+    <figcaption>
+        <h4>Gertboard GPIO Header</h4>
+        
+    </figcaption>
+    
+</figure>
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/GertboardBild2.png"  />
+    
+    
+    <figcaption>
+        <h4>Gertboard Übersicht</h4>
+        
+    </figcaption>
+    
+</figure></p>
+
+<h1 id="das-programm:5d02892c64c757e00d286775ccb08174">Das Programm</h1>
+
+<p>Nun haben wir bereits die “Hardware”-Vorraussetzungen für unsere Lichtorgel
+geschaffen. Wichtig ist, dass ihr die GPIO-Steuerung in euer Programm
+inkludiert:</p>
+
+<pre><code class="language-c">#include &lt;gpio.h&gt;
+</code></pre>
+
+<p>Kommen wir nun zum Code, der die Lichtorgel
+antreibt. Wichtig ist, dass die Api (gpio.h), also die Schnittstelle
+eingebunden ist, die den Zugriff auf das Gertboard ermöglicht. Diese hält
+Methoden bereit, die ihr nun nutzen könnt um die LEDs auf dem Board an und aus
+zu schalten.</p>
+
+<p>Euer Programm soll die LEDs auf dem Gerdboard der Reihe nach aufleuchten lassen.
+Nachdem eine Richtung komplett durchlaufen wurde, soll dies erneut in die
+andere Richtung geschehen. So entsteht eine nicht aufhörende Kette von
+aufleutenden Lampen.</p>
+
+<h1 id="tipps:5d02892c64c757e00d286775ccb08174">Tipps</h1>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-1" aria-expanded="false" aria-controls="tipp-1">
+      Tipp 1
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-1">
+    
+Zuerst muss eine Liste von gpio Pins erstellt werden. Diese sollte alle Pins enthalten die in Verbindung mit den LEDs stehen und diese als Output Pins deklarieren.
+
+  </div>
+</div></p>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-2" aria-expanded="false" aria-controls="tipp-2">
+      Tipp 2
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-2">
+    
+Um das aufleuchten der Lampen zu einer Lichtorgel zu verbinden benötigt ihr 3 Schleifen.
+Davon dient zwei nur zum Aufleuchten einer Reihe in jeweils verschiedene Richtungen. Die dritte dient dazu, dass dieser Vorgang wieder von vorne beginnt.
+
+  </div>
+</div></p>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-3" aria-expanded="false" aria-controls="tipp-3">
+      Tipp 3
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-3">
+    
+Funktionen die genutzt werden sollten sind: begin(), end(), state(), delay().
+
+  </div>
+</div></p>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-4" aria-expanded="false" aria-controls="tipp-4">
+      Tipp 4
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-4">
+    
+Mit der Funktion state() kann sowohl ein Wert abgefragt, mit der set_state(bool) übergegen werden.
+
+  </div>
+</div></p>
+ 
+        <a href="https://github.com/stormarnschule/example-code/blob/master/tutorial/gpio-lights.cpp"
+            class="btn btn-primary btn-lg"
+            style="margin-bottom: 20px;">
+            Beispiel-Code
+        </a>
+    
+
+</main>
+
+	<script src="/raspidocs/js/jquery-2.1.4.min.js"></script>
+	<script src="/raspidocs/js/bootstrap.min.js"></script>
+
+</body>
+</html>

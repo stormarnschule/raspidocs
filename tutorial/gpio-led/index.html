@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="icon" type="image/png" href="/raspidocs/img/favicon.png">
+	<link rel="stylesheet" href="/raspidocs/css/bootstrap.min.css">
+
+	<title>Raspberry Pi Project</title>
+
+</head>
+
+<body>
+
+	
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://stormarnschule.github.io/raspidocs">
+					<img alt="logo" style="display:inline-block;height:20px" src="/raspidocs/img/logo.png">&nbsp;&nbsp;Raspberry Pi Project 
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	
+
+<main class="container">
+
+    <div class="page-header">
+        <h1>Simple LED <small>/ <a href="/raspidocs/tutorial">Tutorial</a></small></h1>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Inhalt</strong></h3>
+        </div>
+        <div class="panel-body">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#voraussetzungen:ee33a8f99010af79e56a62a70cf3bb73">Voraussetzungen</a></li>
+<li><a href="#setup:ee33a8f99010af79e56a62a70cf3bb73">Setup</a></li>
+<li><a href="#setup-check:ee33a8f99010af79e56a62a70cf3bb73">Setup-Check</a></li>
+<li><a href="#das-programm:ee33a8f99010af79e56a62a70cf3bb73">Das Programm</a></li>
+<li><a href="#tipps:ee33a8f99010af79e56a62a70cf3bb73">Tipps</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+
+    
+
+<h1 id="voraussetzungen:ee33a8f99010af79e56a62a70cf3bb73">Voraussetzungen</h1>
+
+<ul>
+<li><a href="http://stormarnschule.github.io/raspidocs/setup/rpi-installation/">Pi Setup/Installation</a></li>
+<li><a href="http://stormarnschule.github.io/raspidocs/setup/ssh/">SSH Verbindung</a></li>
+</ul>
+
+<h1 id="setup:ee33a8f99010af79e56a62a70cf3bb73">Setup</h1>
+
+<p>In diesem Tutorial geht es um eine LED, die mittels des Raspberry Pi&rsquo;s angesteuert und zum blinken gebracht werden soll. Um dies physikalisch zu ermöglichen, muss zunächst eine Verbindung des Pi&rsquo;s mit der LED geschlossen werden. Hierfür benutzen wird ein Schaltboard, auf das die Led gesteckt wird. Der Pi wird nun so mit zwei Kabeln über zwei GPIO-Pins mit dem Schaltboard verbunden, dass ein Stromkreis gebildet wird. Zudem benötigen wir einen in Reihe geschalteten Widerstand, um die Stromstärke zu senken.</p>
+
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/schaltboard_simple_led.png"  />
+    
+    
+    <figcaption>
+        <h4>LED Setup Schaltboard</h4>
+        
+    </figcaption>
+    
+</figure>
+
+<h1 id="setup-check:ee33a8f99010af79e56a62a70cf3bb73">Setup-Check</h1>
+
+<p>Wenn ihr euer Schaltboard mit den aufgezählten Elementen versehen habt, könnt ihr euer Setup testen, indem ihr die Kabel die nun vom Schaltboard ausgehen mit dem Dauerstrompin(3,3v, Pin 1) des Pi&rsquo;s und der Erdung(Pin 25) verbindet (siehe Grafik). Achtet darauf, dass eine LED-Diode nur bei einer Stromrichtung den Stromkreislauf schließt. Kommt es daraufhin zu einem Dauerleuchten euer LED, wisst ihr, dass alle Komponenten intakt sind.</p>
+
+<figure>
+    
+        <img  class="container" src="/raspidocs/img/pi_simple_led.png"  />
+    
+    
+    <figcaption>
+        <h4>Pin Setup</h4>
+        
+    </figcaption>
+    
+</figure>
+
+<h1 id="das-programm:ee33a8f99010af79e56a62a70cf3bb73">Das Programm</h1>
+
+<p>Nun soll die Led vom Raspberry aus gesteuert werden und nicht durchleuchten, sondern Phasenweise für jeweils 0,5s an und aus sein. Um dies überhaupt zu ermöglichen, muss noch eine kleine Änderung an eurer Hardware vorgenommen werden. Die Verbindung am Dauerstrompin muss aufgelöst werden und das Kabel muss mit an einen der GPIO-Pins verbunden werden. Wir nutzen für dieses Programm den GPIO Pin 15 (siehe Grafik). Diesen Pin könnt ihr mit dem Raspberry Pi ansteuern und an- bzw. ausschalten, also eine Spannung anlegen oder nicht anlegen.
+Schreibt nun ein Programm, welches die LED 10 mal für 0,5s leuchten lässt.</p>
+
+<h1 id="tipps:ee33a8f99010af79e56a62a70cf3bb73">Tipps</h1>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-1" aria-expanded="false" aria-controls="tipp-1">
+      Tipp 1
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-1">
+     Die Gpio-Klasse erleichtert das Arbeiten mit den Pins erheblich. Erfindet also das Rad nicht neu und importiert diese zu Anfang (#include "gpio.h). Es ist jetzt möglich Input- und Output-Pins allein mit der Übergabe der Pinnummer zu definieren. Ihr braucht außerdem eine Hauptmethode "int main()". Diese wird bei Programmstart ausgeführt. In ihr könnt ihr die Syntax für euer Programm implementieren.  
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-2" aria-expanded="false" aria-controls="tipp-2">
+      Tipp 2
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-2">
+     Zuerst muss der Pin 15 als Output-Pin definiert werden. Erzeugt also ein Pin-Objekt über die "output_pin" Methode in der Gpio-Klasse.   
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-3" aria-expanded="false" aria-controls="tipp-3">
+      Tipp 3
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-3">
+     Das zehnfache aufleuchten könnt ihr mir einer for-Schleife umsetzen. 
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-4" aria-expanded="false" aria-controls="tipp-4">
+      Tipp 4
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-4">
+     Den Pin-Status kann mit der Methode "set_state" verändert werden.  
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-5" aria-expanded="false" aria-controls="tipp-5">
+      Tipp 5
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-5">
+     Mit der Methode "delay()" wird das Programm für die Zeitdauer der übergebenden Zahl in ms pausiert. 
+  </div>
+</div></p>
+ 
+        <a href="https://github.com/stormarnschule/example-code/blob/master/tutorial/gpio-led.cpp"
+            class="btn btn-primary btn-lg"
+            style="margin-bottom: 20px;">
+            Beispiel-Code
+        </a>
+    
+
+</main>
+
+	<script src="/raspidocs/js/jquery-2.1.4.min.js"></script>
+	<script src="/raspidocs/js/bootstrap.min.js"></script>
+
+</body>
+</html>

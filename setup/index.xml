@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setups on Raspberry Pi Project</title>
+    <link>http://stormarnschule.github.io/raspidocs/setup/</link>
+    <description>Recent content in Setups on Raspberry Pi Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <lastBuildDate>Mon, 23 Nov 2015 09:41:32 +0100</lastBuildDate>
+    <atom:link href="http://stormarnschule.github.io/raspidocs/setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SSH Verbindung</title>
+      <link>http://stormarnschule.github.io/raspidocs/setup/ssh/</link>
+      <pubDate>Mon, 23 Nov 2015 09:41:32 +0100</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/setup/ssh/</guid>
+      <description>
+
+&lt;h1 id=&#34;konzept:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Konzept&lt;/h1&gt;
+
+&lt;p&gt;Das Herstellen einer SSH-Verbindung zum Rasperry Pi ist sehr nützlich zum
+Ausführen von Befehlen. Man kann sich dann das anschließen von Monitor und
+Tastatur an den Pi sparen und vom eigenem Laptop oder Schulrecher aus den
+Pi steuern.&lt;/p&gt;
+
+&lt;p&gt;Je nach Betriebsystem ist das Verbinden zum Pi unterschiedlich. Dise Anleitung
+gilt für Linux, OSX und Windows.&lt;/p&gt;
+
+&lt;h1 id=&#34;verbinden-mit-pi:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Verbinden mit Pi&lt;/h1&gt;
+
+&lt;h2 id=&#34;linux-osx:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Linux, OSX&lt;/h2&gt;
+
+&lt;p&gt;OSX basiert auf Linux und da Linux einen SSH-Klienten mitbringt, gelten diese
+Schritte auch für OSX.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Öffne das Terminal&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Führe folgenden Befehl aus:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh pi@&amp;lt;ip&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;lt;ip&amp;gt;&lt;/strong&gt; ist durch die IP-Addresse oder den Hostnamen des Raspberry Pis zu
+ersetzten.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Du bist nun auf dem Raspberry Pi und die Befehle, die du schreibt, werden
+direkt auf dem Pi ausgeführt&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Um zu Beenden, schließe entweder einfach das Terminal oder sende &lt;code&gt;exit&lt;/code&gt; an
+den Pi, um zum Terminal deines PCs zurückzukehren&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;windows:b5e789e001cfcd9a18b36ef13da96386&#34;&gt;Windows&lt;/h2&gt;
+
+&lt;p&gt;Anders als vorher hat Windows keinen eigenen SSH-Klienten, deshalb müssen wir
+uns einen herunterladen und installieren.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Lade &lt;a href=&#34;the.earth.li/~sgtatham/putty/latest/x86/putty.exe&#34;&gt;Putty&lt;/a&gt; herunter und
+ziehen es an einen geeigneten Ort, z.B. den Desktop&lt;/li&gt;
+&lt;li&gt;Starte Putty&lt;/li&gt;
+&lt;li&gt;Gib in das Feld &lt;code&gt;Host Name (or IP Address)&lt;/code&gt; folgendes ein: &lt;code&gt;pi@&amp;lt;ip&amp;gt;&lt;/code&gt;.&lt;br /&gt;
+&lt;strong&gt;&amp;lt;ip&amp;gt;&lt;/strong&gt; ist durch die IP-Addresse oder den Hostnamen des Raspberry Pis zu
+ersetzten&lt;/li&gt;
+&lt;li&gt;Drücke Enter oder klicke auf &lt;strong&gt;Open&lt;/strong&gt; unten rechts&lt;/li&gt;
+&lt;li&gt;Du bist nun auf dem Raspberry Pi und die Befehle, die du schreibt, werden
+direkt auf dem Pi ausgeführt&lt;/li&gt;
+&lt;li&gt;Zum Beenden kannst du einfach das Putty-Fenster schließen&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rasberry Pi - Installation</title>
+      <link>http://stormarnschule.github.io/raspidocs/setup/rpi-installation/</link>
+      <pubDate>Mon, 26 Oct 2015 11:50:32 +0100</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/setup/rpi-installation/</guid>
+      <description>
+
+&lt;h1 id=&#34;materialien:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;Materialien&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SD-Karte, &lt;strong&gt;4 GB oder mehr&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Win32 Disk Imager&lt;/li&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;Computer mit SD-Kartenleser&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;betriebsystem:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;Betriebsystem&lt;/h1&gt;
+
+&lt;p&gt;Das Betriebsystem des Raspberry Pis ist eine angepasste Linux-Distribution, die von dem
+populärem &lt;a href=&#34;https://www.debian.org&#34;&gt;Debian&lt;/a&gt; abstammt, daher auch der Name &amp;ldquo;Raspbian&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-download:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;1. Download&lt;/h2&gt;
+
+&lt;p&gt;Als erstes muss das Datenträgerabbild von der Raspberry Pi Webseite heruntergeladen werden.
+Ihr findet es &lt;a href=&#34;https://www.raspberrypi.org/downloads/raspbian/&#34;&gt;auf der Downloadseite&lt;/a&gt;.
+Am Besten ladet ihr immer das Aktuellste herunter, wenn ihr einen Pi neu aufsetzt, dieses
+seht ihr auf der linken Seite:
+&lt;strong&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian_latest&#34;&gt;Direktlink&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Nach dem ihr die ZIP-Datei heruntergeladen habt, müsst ihr diese entpacken: Ihr erhaltet
+eine &lt;strong&gt;.IMG&lt;/strong&gt; Datei, das Datenträgerabbild.&lt;/p&gt;
+
+&lt;h2 id=&#34;2-sd-karte:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;2. SD-Karte&lt;/h2&gt;
+
+&lt;p&gt;Für das Kopieren des Images (Datenträgerabbildes) ist ein Programm wie
+&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-0.9.5-binary.zip/download&#34;&gt;Win32 Disk Imager&lt;/a&gt;
+benötigt, welches den Inhalt auf die SD-Karte schreibt.&lt;/p&gt;
+
+&lt;p&gt;Startet das Programm nach Download &amp;amp; Entpacken mit &lt;strong&gt;Administratorrechten&lt;/strong&gt;. Dies ist
+wichtig, da das Schreiben sonst unter Umständen nicht funktioniert!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Rechtsklick auf &amp;ldquo;Win32DiskImager.exe&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Klick auf &amp;ldquo;Als Administrator ausführen&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Wenn Win32 Disk Imager läuft:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Klick auf den kleinen, blauen Ordner rechts&lt;/li&gt;
+&lt;li&gt;Image (.IMG Datei) auswählen und bestätigen&lt;/li&gt;
+&lt;li&gt;Rechts unter &amp;ldquo;Device&amp;rdquo; die SD-Karte auswählen,
+den Laufwerkbuchstaben findet unter Windows-Explorer heraus&lt;/li&gt;
+&lt;li&gt;Klick auf &amp;ldquo;Write&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Klick auf &amp;ldquo;Yes&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Wartet nun, bis der Schreibvorgang fertig abgeschlossen wurde.&lt;/p&gt;
+
+&lt;h2 id=&#34;3-einrichtung:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;3. Einrichtung&lt;/h2&gt;
+
+&lt;p&gt;Steckt die SD-Karte, ein Netzwerkkabel und das Stromkabel in euren Pi und bootet.
+Hat Alles funktioniert, könnt ihr nach ein paar Sekunden euch über SSH mit eurem
+Raspberry Pi verbinden. Wie das geht, steht hier: &lt;strong&gt;&lt;a href=&#34;http://stormarnschule.github.io/raspidocs/setup/ssh/&#34;&gt;SSH Verbindung&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Benutzer: pi
+Passwort: raspberry
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Zu Erst werden einige grundlegende Einstellungen vorgenommen und Programme installiert.&lt;br /&gt;
+All dies wird als Root-Benutzer ausgeführt:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo -i
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Update der Software auf dem Pi (kann eine Weile dauern):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get -y update &amp;amp;&amp;amp; apt-get -y upgrade
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Konfigurieren mit &amp;ldquo;raspi-config&amp;rdquo;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;raspi-config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ihr navigiert mit den Pfeiltasten und bestätigt mit der Entertaste. Mit Escape
+kommt ihr ein Menü zurück.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Wähle &amp;ldquo;1 Expand Filesystem&amp;rdquo;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Bestätige mit OK&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;3 Boot Options&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;B2 Console Autologin&amp;rdquo;&lt;br /&gt;
+&lt;em&gt;Der Pi startet dann in der Konsole und ihr seit bereits eingeloggt&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;8 Advanced Options&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;A6 SPI&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;Yes&amp;rdquo;&lt;br /&gt;
+&lt;em&gt;SPI ist aktiviert, das ist eine Schnittstelle die z.B. für das LCD Tutorial
+benötigt wird&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Bestätige mit OK&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;Yes&amp;rdquo;&lt;br /&gt;
+&lt;em&gt;SPI ist nun auch beim nächsten Neustart aktiv&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Bestätige mit OK&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wähle &amp;ldquo;Finish&amp;rdquo; oder Drücke die Escape-Taste um zu Beenden&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Startet nun den Raspberry Pi neu!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;software:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;Software&lt;/h1&gt;
+
+&lt;h2 id=&#34;c-bibliotheken:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;C++ Bibliotheken&lt;/h2&gt;
+
+&lt;p&gt;Als Nächstes wollen wir die benötigten C++ Bibliotheken installiern, die zum
+Zugreifen auf die GPIO-Schnittstelle benötigt werden.&lt;/p&gt;
+
+&lt;h3 id=&#34;bcm2835:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;BCM2835&lt;/h3&gt;
+
+&lt;p&gt;Diese Bibliothek ist die Grundlage für alle weiteren GPIO Bibliotheken.
+Um sie zu installieren, führt ihr folgendes in der Konsole aus.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Ordner erstellen
+mkdir -p ~/libs
+cd ~/libs
+
+# Download und Entpacken
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.46.tar.gz
+tar -xzvf bcm2835-1.46.tar.gz
+cd bcm2835-1.46
+
+# Konfigurieren, Kompilieren, Installieren
+./configure
+make
+sudo make check
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;gpio:ff527b9237b07e50f622f0bbd9005f98&#34;&gt;GPIO&lt;/h3&gt;
+
+&lt;p&gt;Mit dieser Bibliothek wird das verwenden von Pins erheblich erleichtert,
+deswegen sollte sie installiert werden:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ~/libs
+
+# Download
+git clone https://github.com/stormarnschule/gpio.git
+cd gpio
+
+# Kompiliern und Installieren
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

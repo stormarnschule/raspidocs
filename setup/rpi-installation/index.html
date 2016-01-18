@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="icon" type="image/png" href="/raspidocs/img/favicon.png">
+	<link rel="stylesheet" href="/raspidocs/css/bootstrap.min.css">
+
+	<title>Raspberry Pi Project</title>
+
+</head>
+
+<body>
+
+	
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://stormarnschule.github.io/raspidocs">
+					<img alt="logo" style="display:inline-block;height:20px" src="/raspidocs/img/logo.png">&nbsp;&nbsp;Raspberry Pi Project 
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	
+
+<main class="container">
+
+    <div class="page-header">
+        <h1>Rasberry Pi - Installation <small>/ <a href="/raspidocs/setup">Setup</a></small></h1>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Inhalt</strong></h3>
+        </div>
+        <div class="panel-body">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#materialien:ff527b9237b07e50f622f0bbd9005f98">Materialien</a></li>
+<li><a href="#betriebsystem:ff527b9237b07e50f622f0bbd9005f98">Betriebsystem</a>
+<ul>
+<li><a href="#1-download:ff527b9237b07e50f622f0bbd9005f98">1. Download</a></li>
+<li><a href="#2-sd-karte:ff527b9237b07e50f622f0bbd9005f98">2. SD-Karte</a></li>
+<li><a href="#3-einrichtung:ff527b9237b07e50f622f0bbd9005f98">3. Einrichtung</a></li>
+</ul></li>
+<li><a href="#software:ff527b9237b07e50f622f0bbd9005f98">Software</a>
+<ul>
+<li><a href="#c-bibliotheken:ff527b9237b07e50f622f0bbd9005f98">C++ Bibliotheken</a>
+<ul>
+<li><a href="#bcm2835:ff527b9237b07e50f622f0bbd9005f98">BCM2835</a></li>
+<li><a href="#gpio:ff527b9237b07e50f622f0bbd9005f98">GPIO</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+    </div>
+
+    
+
+<h1 id="materialien:ff527b9237b07e50f622f0bbd9005f98">Materialien</h1>
+
+<ul>
+<li>SD-Karte, <strong>4 GB oder mehr</strong></li>
+<li>Win32 Disk Imager</li>
+<li>Raspberry Pi</li>
+<li>Computer mit SD-Kartenleser</li>
+</ul>
+
+<h1 id="betriebsystem:ff527b9237b07e50f622f0bbd9005f98">Betriebsystem</h1>
+
+<p>Das Betriebsystem des Raspberry Pis ist eine angepasste Linux-Distribution, die von dem
+populärem <a href="https://www.debian.org">Debian</a> abstammt, daher auch der Name &ldquo;Raspbian&rdquo;.</p>
+
+<h2 id="1-download:ff527b9237b07e50f622f0bbd9005f98">1. Download</h2>
+
+<p>Als erstes muss das Datenträgerabbild von der Raspberry Pi Webseite heruntergeladen werden.
+Ihr findet es <a href="https://www.raspberrypi.org/downloads/raspbian/">auf der Downloadseite</a>.
+Am Besten ladet ihr immer das Aktuellste herunter, wenn ihr einen Pi neu aufsetzt, dieses
+seht ihr auf der linken Seite:
+<strong><a href="https://downloads.raspberrypi.org/raspbian_latest">Direktlink</a></strong></p>
+
+<p>Nach dem ihr die ZIP-Datei heruntergeladen habt, müsst ihr diese entpacken: Ihr erhaltet
+eine <strong>.IMG</strong> Datei, das Datenträgerabbild.</p>
+
+<h2 id="2-sd-karte:ff527b9237b07e50f622f0bbd9005f98">2. SD-Karte</h2>
+
+<p>Für das Kopieren des Images (Datenträgerabbildes) ist ein Programm wie
+<a href="http://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-0.9.5-binary.zip/download">Win32 Disk Imager</a>
+benötigt, welches den Inhalt auf die SD-Karte schreibt.</p>
+
+<p>Startet das Programm nach Download &amp; Entpacken mit <strong>Administratorrechten</strong>. Dies ist
+wichtig, da das Schreiben sonst unter Umständen nicht funktioniert!</p>
+
+<ol>
+<li>Rechtsklick auf &ldquo;Win32DiskImager.exe&rdquo;</li>
+<li>Klick auf &ldquo;Als Administrator ausführen&rdquo;</li>
+</ol>
+
+<p>Wenn Win32 Disk Imager läuft:</p>
+
+<ol>
+<li>Klick auf den kleinen, blauen Ordner rechts</li>
+<li>Image (.IMG Datei) auswählen und bestätigen</li>
+<li>Rechts unter &ldquo;Device&rdquo; die SD-Karte auswählen,
+den Laufwerkbuchstaben findet unter Windows-Explorer heraus</li>
+<li>Klick auf &ldquo;Write&rdquo;</li>
+<li>Klick auf &ldquo;Yes&rdquo;</li>
+</ol>
+
+<p>Wartet nun, bis der Schreibvorgang fertig abgeschlossen wurde.</p>
+
+<h2 id="3-einrichtung:ff527b9237b07e50f622f0bbd9005f98">3. Einrichtung</h2>
+
+<p>Steckt die SD-Karte, ein Netzwerkkabel und das Stromkabel in euren Pi und bootet.
+Hat Alles funktioniert, könnt ihr nach ein paar Sekunden euch über SSH mit eurem
+Raspberry Pi verbinden. Wie das geht, steht hier: <strong><a href="http://stormarnschule.github.io/raspidocs/setup/ssh/">SSH Verbindung</a></strong></p>
+
+<pre><code>Benutzer: pi
+Passwort: raspberry
+</code></pre>
+
+<p>Zu Erst werden einige grundlegende Einstellungen vorgenommen und Programme installiert.<br />
+All dies wird als Root-Benutzer ausgeführt:</p>
+
+<pre><code>sudo -i
+</code></pre>
+
+<p>Update der Software auf dem Pi (kann eine Weile dauern):</p>
+
+<pre><code>apt-get -y update &amp;&amp; apt-get -y upgrade
+</code></pre>
+
+<p>Konfigurieren mit &ldquo;raspi-config&rdquo;:</p>
+
+<pre><code>raspi-config
+</code></pre>
+
+<p>Ihr navigiert mit den Pfeiltasten und bestätigt mit der Entertaste. Mit Escape
+kommt ihr ein Menü zurück.</p>
+
+<ol>
+<li>Wähle &ldquo;1 Expand Filesystem&rdquo;</li>
+
+<li><p>Bestätige mit OK</p></li>
+
+<li><p>Wähle &ldquo;3 Boot Options&rdquo;</p></li>
+
+<li><p>Wähle &ldquo;B2 Console Autologin&rdquo;<br />
+<em>Der Pi startet dann in der Konsole und ihr seit bereits eingeloggt</em></p></li>
+
+<li><p>Wähle &ldquo;8 Advanced Options&rdquo;</p></li>
+
+<li><p>Wähle &ldquo;A6 SPI&rdquo;</p></li>
+
+<li><p>Wähle &ldquo;Yes&rdquo;<br />
+<em>SPI ist aktiviert, das ist eine Schnittstelle die z.B. für das LCD Tutorial
+benötigt wird</em></p></li>
+
+<li><p>Bestätige mit OK</p></li>
+
+<li><p>Wähle &ldquo;Yes&rdquo;<br />
+<em>SPI ist nun auch beim nächsten Neustart aktiv</em></p></li>
+
+<li><p>Bestätige mit OK</p></li>
+
+<li><p>Wähle &ldquo;Finish&rdquo; oder Drücke die Escape-Taste um zu Beenden</p></li>
+</ol>
+
+<p><strong>Startet nun den Raspberry Pi neu!</strong></p>
+
+<h1 id="software:ff527b9237b07e50f622f0bbd9005f98">Software</h1>
+
+<h2 id="c-bibliotheken:ff527b9237b07e50f622f0bbd9005f98">C++ Bibliotheken</h2>
+
+<p>Als Nächstes wollen wir die benötigten C++ Bibliotheken installiern, die zum
+Zugreifen auf die GPIO-Schnittstelle benötigt werden.</p>
+
+<h3 id="bcm2835:ff527b9237b07e50f622f0bbd9005f98">BCM2835</h3>
+
+<p>Diese Bibliothek ist die Grundlage für alle weiteren GPIO Bibliotheken.
+Um sie zu installieren, führt ihr folgendes in der Konsole aus.</p>
+
+<pre><code># Ordner erstellen
+mkdir -p ~/libs
+cd ~/libs
+
+# Download und Entpacken
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.46.tar.gz
+tar -xzvf bcm2835-1.46.tar.gz
+cd bcm2835-1.46
+
+# Konfigurieren, Kompilieren, Installieren
+./configure
+make
+sudo make check
+sudo make install
+</code></pre>
+
+<h3 id="gpio:ff527b9237b07e50f622f0bbd9005f98">GPIO</h3>
+
+<p>Mit dieser Bibliothek wird das verwenden von Pins erheblich erleichtert,
+deswegen sollte sie installiert werden:</p>
+
+<pre><code>cd ~/libs
+
+# Download
+git clone https://github.com/stormarnschule/gpio.git
+cd gpio
+
+# Kompiliern und Installieren
+make
+sudo make install
+</code></pre>
+ 
+
+</main>
+
+	<script src="/raspidocs/js/jquery-2.1.4.min.js"></script>
+	<script src="/raspidocs/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on Raspberry Pi Project</title>
+    <link>http://stormarnschule.github.io/raspidocs/meta/</link>
+    <description>Recent content in Meta on Raspberry Pi Project</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <atom:link href="http://stormarnschule.github.io/raspidocs/meta/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Entstehung Dokumentation</title>
+      <link>http://stormarnschule.github.io/raspidocs/meta/documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://stormarnschule.github.io/raspidocs/meta/documentation/</guid>
+      <description>
+
+&lt;p&gt;Auf dieser Seite wird erläutert, wie diese Dokumentation entsteht. Es wird
+dabei hauptsächlich auf technische Details eingegangen, die zeigen sollen,
+wie aus einer Markdown-Datei eine vollständige HTML-Webseite wird.&lt;/p&gt;
+
+&lt;h1 id=&#34;schreiben:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Schreiben&lt;/h1&gt;
+
+&lt;p&gt;Die gesamte Dokumentation besteht aus mehreren &lt;a href=&#34;http://markdown.de&#34;&gt;Markdown&lt;/a&gt;-Dateien,
+welche von einem Programm nach HTML übersetzt werden.&lt;/p&gt;
+
+&lt;p&gt;Markdown enthält einige Anweisungen, die für die Formatierung von Text verwendet
+werden. Ein Beispiel:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;# Titel
+## Untertitel
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+gubergren, no sea takimata sanctus est.
+
+Auflistung
+
+* Punkt 1
+* Punkt 2
+
+**fett** und *kursiv*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dieser Code wird in folgendes HTML kompiliert:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;h1&amp;gt;Titel&amp;lt;/h1&amp;gt;
+&amp;lt;h2&amp;gt;Untertitel&amp;lt;/h2&amp;gt;
+
+&amp;lt;p&amp;gt;
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est.
+&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;Auflistung&amp;lt;/p&amp;gt;
+
+&amp;lt;ul&amp;gt;
+    &amp;lt;li&amp;gt;Punkt 1&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;Punkt 2&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;strong&amp;gt;fett&amp;lt;/strong&amp;gt; und &amp;lt;em&amp;gt;kursiv&amp;lt;/em&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wann genau dies geschieht, seht ihr weiter unten im Punkt &lt;strong&gt;Übersetzen nach HTML&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;hosting:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Hosting&lt;/h1&gt;
+
+&lt;p&gt;Die Markdown-Datein sind auf &lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt; in einem
+&lt;a href=&#34;http://rogerdudler.github.io/git-guide/index.de.html&#34;&gt;Git-Repository&lt;/a&gt;
+gespeichert. GitHub ist eine Plattform, wo Entwickler ihren Code kostenlos
+für andere zu Verfügung stellen können.&lt;/p&gt;
+
+&lt;p&gt;Das Repository, wo man die Markdown-Dokumentation sehen kann,
+&lt;a href=&#34;https://github.com/stormarnschule/raspidocs&#34;&gt;findet man hier&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;übersetzen-nach-html:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Übersetzen nach HTML&lt;/h1&gt;
+
+&lt;p&gt;Da Webbrowser Webseiten in HTML lesen und dann darstellen, wird der Markdown-Code
+nach HTML kompiliert. Dies geschieht jedesmal, wenn ein neuer Commit hochgeladen wird,
+also der Code geändert wurde.&lt;/p&gt;
+
+&lt;p&gt;Die Tatsache, dass wir direkt nach HTML übersetzen, wenn es neuen Markdown-Code gibt,
+anstatt ihn bei jedem Aufruf unserer Seite zu kompilieren, hat den Vorteil, das
+dies viel schneller ist. Ohnehiin kann GitHub nur statische HTML-Dateien
+bereitstellen, es läuft kein dynamisches Serverskript, welches die Seiten beim Laden
+anpasst oder erstellt.&lt;/p&gt;
+
+&lt;p&gt;Diese Methode wird häufig für Blogs oder Dokumentationen angewendet, um geringe
+Ladezeiten zu ermöglichen. Diese Aufgabe übernimmt bei uns das Programm
+&lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt;. Es rendert den Markdown-Code unter Verwendung eines
+Themes zu HTML-Code. Das Theme bestimmt dabei Farben, Schriftgröße und Layout
+der fertigen Webseite. Es gibt also an, auf welche Art das Markdown, welches
+bloß zur Strukturierung des Textes dient, dargestellt wird.&lt;/p&gt;
+
+&lt;h1 id=&#34;automatisches-übersetzen:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Automatisches Übersetzen&lt;/h1&gt;
+
+&lt;p&gt;Damit wir nicht jedes Mal, wenn wir etwas verändert haben, Hugo lokal ausführen
+und dann den HTML-Code hochladen müssen, gibt es etwas, was sich
+&lt;strong&gt;Continuous Delivery&lt;/strong&gt; nennt.&lt;br /&gt;
+Wir benutzen hierfür &lt;a href=&#34;http://wercker.com/about&#34;&gt;Wercker&lt;/a&gt;. Das ist eine Web-App,
+die bei jedem Commit eines GitHub-Repository ein Shell-Skript ausführt.
+Dieses Skript startet dann Hugo mit dem Code aus dem Repository und dem Theme,
+welches sich ebenfalls in dem Repos befindet.&lt;/p&gt;
+
+&lt;p&gt;Wenn das Übersetzen erfolgreich war, lädt Wercker das Ergebnis in den Zweig
+&lt;a href=&#34;https://github.com/stormarnschule/raspidocs/tree/gh-pages&#34;&gt;gh-pages&lt;/a&gt; hoch.&lt;/p&gt;
+
+&lt;p&gt;Wenn mann nun auf die Webseite &lt;strong&gt;stormarnschule.github.io/raspidocs&lt;/strong&gt; geht,
+liefert GitHub die HTML-Dateien aus dem &lt;strong&gt;gh-pages&lt;/strong&gt; Zweig des &lt;strong&gt;raspidocs&lt;/strong&gt;
+Repositories.&lt;/p&gt;
+
+&lt;h1 id=&#34;fazit-des-workflows:519b3731c0b3c26bafa462d3efdcc120&#34;&gt;Fazit des Workflows&lt;/h1&gt;
+
+&lt;p&gt;Markdown bietet den großen Vorteil, dass es sich um reine Textdateien ohne
+komplizierte Syntax, wie HTML sie hat, handelt. Dies erhöht die Lesbarkeit
+und die Geschwindigkeit beim Schreiben.&lt;/p&gt;
+
+&lt;p&gt;Dadurch, dass ein Theme das Layout übernimmt, muss man beim Verfassen der
+Inhalte nicht auf das Layout acht geben. Außerdem kann man durch einfaches
+Austauschen des Themes die gesamte Webseite umgestalten, ohne in jeder
+Datei HTML-Code anpassen zu müssen.&lt;/p&gt;
+
+&lt;p&gt;Zuletzt ist das Hosting über GitHub eines der zuverlässigsten und schnellsten
+die es gibt. Dazu ist es kostenlos, sorgt also für ein langes Fortbestehen
+der Webseite.&lt;/p&gt;
+
+&lt;p&gt;So muss man sich nach einer kleinen Einrichtung, die auch noch schneller
+als bei klassischen Methoden von statten geht, nur noch um den Inhalt kümmern.
+Alles Weitere übernehmen ab dann GitHub und Wercker.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de-de">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<link rel="icon" type="image/png" href="/raspidocs/img/favicon.png">
+	<link rel="stylesheet" href="/raspidocs/css/bootstrap.min.css">
+
+	<title>Raspberry Pi Project</title>
+
+</head>
+
+<body>
+
+	
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://stormarnschule.github.io/raspidocs">
+					<img alt="logo" style="display:inline-block;height:20px" src="/raspidocs/img/logo.png">&nbsp;&nbsp;Raspberry Pi Project 
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	
+
+<main class="container">
+
+    <div class="page-header">
+        <h1>GPIO - Taster <small>/ <a href="/raspidocs/tutorial">Tutorial</a></small></h1>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Inhalt</strong></h3>
+        </div>
+        <div class="panel-body">
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#vorrausetzungen:ae1bf6e82ed181f414b60af227d967aa">Vorrausetzungen</a></li>
+<li><a href="#setup:ae1bf6e82ed181f414b60af227d967aa">Setup</a></li>
+<li><a href="#das-programm:ae1bf6e82ed181f414b60af227d967aa">Das Programm</a></li>
+<li><a href="#tipps:ae1bf6e82ed181f414b60af227d967aa">Tipps</a></li>
+</ul>
+</nav>
+        </div>
+    </div>
+
+    
+
+<h1 id="vorrausetzungen:ae1bf6e82ed181f414b60af227d967aa">Vorrausetzungen</h1>
+
+<ul>
+<li><a href="http://stormarnschule.github.io/raspidocs/tutorial/gertboard/">Gertboard Grundwissen</a></li>
+</ul>
+
+<h1 id="setup:ae1bf6e82ed181f414b60af227d967aa">Setup</h1>
+
+<p>Da in diesem Turorial zum ersten Mal die Taster auf dem Gertboard eingebunden
+werden sollen und diese eine Eingabe darstellen werden, muss die Verkabelung
+der Pins erneut verändert werden.<br />
+Auf die Output Pins B1-B3 müssen Jumper gesetzt werden. Dies ermöglicht eine
+Ausgabe des Gertboardboard ausgelöst durch die Taster. Außerdem müssen die GPIO
+Pins 25 mit B1, 24 mit B2 und 23 mit B1 verbunden werden.</p>
+
+<h1 id="das-programm:ae1bf6e82ed181f414b60af227d967aa">Das Programm</h1>
+
+<p>Euer Programm soll nun den Status der Buttons anzeigen. Hierbei sollt ihr alle
+drei Buttons einbinden und eine Ausgabe formulieren, über die dem Nutzer
+mitgeteilt wird, ob ein Button gedrückt ist oder nicht.</p>
+
+<h1 id="tipps:ae1bf6e82ed181f414b60af227d967aa">Tipps</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-1" aria-expanded="false" aria-controls="tipp-1">
+      Tipp 1
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-1">
+    
+Es muss eine Liste der Pins angelegt werden, über die die Buttons angesteuert werden, bzw. über die deren Signal geleitet wird. Diese soll gleichzeitig die Pins als button_pin deklarieren. Ihr erstellt also eine Liste von den button_pins. Mit dieser Liste könnt ihr dann im folgenden arbeiten.
+
+  </div>
+</div>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-2" aria-expanded="false" aria-controls="tipp-2">
+      Tipp 2
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-2">
+    
+Die Liste muss durchgegangen werden und von jedem Pin soll der Status ermittelt werden. Diesen könnt ihr in einer Variablen Speichern und ausgeben lassen.
+
+  </div>
+</div></p>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-3" aria-expanded="false" aria-controls="tipp-3">
+      Tipp 3
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-3">
+    
+Um immer den aktuellen Status eines Buttons ermitteln, müssen sich eure Statusabfragen und Ausgaben in einer while-Schleife befinden.
+
+  </div>
+</div></p>
+
+<p><div class="panel panel-default">
+  <div class="panel-heading">
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#tipp-4" aria-expanded="false" aria-controls="tipp-4">
+      Tipp 4
+    </a>
+  </div>
+  <div class="panel-body collapse" id="tipp-4">
+    
+Der Übersichtlichkeit halber solltet ihr die ausgegebene Zeile zu Beginn der Schleife wieder löschen.
+
+  </div>
+</div></p>
+ 
+        <a href="https://github.com/stormarnschule/example-code/blob/master/tutorial/gpio-button.cpp"
+            class="btn btn-primary btn-lg"
+            style="margin-bottom: 20px;">
+            Beispiel-Code
+        </a>
+    
+
+</main>
+
+	<script src="/raspidocs/js/jquery-2.1.4.min.js"></script>
+	<script src="/raspidocs/js/bootstrap.min.js"></script>
+
+</body>
+</html>
