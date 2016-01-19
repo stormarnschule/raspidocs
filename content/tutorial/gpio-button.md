@@ -9,12 +9,14 @@ hasexamplecode = true
 
 # Setup
 
-Da in diesem Turorial zum ersten Mal die Taster auf dem Gertboard eingebunden
-werden sollen und diese eine Eingabe darstellen werden, muss die Verkabelung
-der Pins erneut verändert werden.  
-Auf die Output Pins B1-B3 müssen Jumper gesetzt werden. Dies ermöglicht eine
-Ausgabe des Gertboardboard ausgelöst durch die Taster. Außerdem müssen die GPIO
-Pins 25 mit B1, 24 mit B2 und 23 mit B1 verbunden werden.
+Da in diesem Turorial zum ersten Mal die Taster auf dem Gertboard eingebunden werden sollen und diese eine Eingabe darstellen werden, muss die Verkabelung der Pins erneut verändert werden. Auf die Output Pins B1-B3 müssen Jumper gesetzt werden. Dies ermöglicht eine Ausgabe des Gertboardboard ausgelöst durch die Taster.
+
+{{< figure src="/raspidocs/img/Gerdboard_gpio_buttons_buffer.png" title="Gertboard Buffer" >}}
+
+
+Außerdem müssen die GPIO Pins 25 mit B1, 24 mit B2 und 23 mit B1 verbunden werden.
+
+{{< figure src="/raspidocs/img/Gerdboard_gpio_buttons_cables.png" title="Gertboard Verkabelung" >}}
 
 # Das Programm
 
